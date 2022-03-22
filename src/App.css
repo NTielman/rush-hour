@@ -1,5 +1,6 @@
 body {
-  background: rgb(236, 236, 236);
+  background: #ededed;
+  min-height: 100vh;
 }
 
 .App {
@@ -9,8 +10,8 @@ body {
 }
 
 .play-area {
-  min-width: 500px;
-  min-height: 500px;
+  min-width: 600px;
+  min-height: 600px;
 }
 
 /* Grid styling */
@@ -20,9 +21,8 @@ ul.grid {
   display: flex;
   flex-direction: column;
   list-style: none;
-  background: grey;
+  background: #333;
   border-radius: 20px;
-  gap: .25rem;
   justify-content: space-evenly;
   overflow: hidden;
 }
@@ -31,15 +31,122 @@ li[class^="row"] {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: .25rem;
   height: inherit;
 }
 
 li[class^="col"] {
-  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1;
   align-self: stretch;
+  transition: ease-in-out 0.25s;
+  position: relative;
+}
+
+li[class^="col"]:hover {
+  background: rgba(245, 245, 245, 0.25);
+}
+
+/* Vehicle styling */
+.vehicle {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  background: #f4b603;
+  border-radius: 10px;
+  box-shadow: -10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.vehicle.vertical {
+  transform: rotate(-90deg);
+}
+
+/* Back lights */
+.vehicle::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 2px;
+  width: 5px;
+  height: 15px;
+  background: #fc3c25;
+  border-radius: 2px;
+
+  /* Second light */
+  box-shadow: 0 42px #fc3c25;
+}
+
+/* Front lights */
+.vehicle::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 2px;
+  width: 6px;
+  height: 16px;
+  background: #fff;
+  border-radius: 2px;
+
+  /* Second light */
+  box-shadow: 0 44px #fff;
+}
+
+/* Vehicle body */
+.vehicle-body {
+  position: absolute;
+  inset: 5px 10px;
+  background: #fdd206;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.vehicle-body::before {
+  content: "";
+  position: absolute;
+  inset: 0 30px;
+  background: #111;
+  border-radius: 10px;
+}
+
+.vehicle-body::after {
+  content: "";
+  position: absolute;
+  inset: 0px 87px;
+  background: #fdd206;
+}
+
+/* Vehicle top */
+.vehicle-top {
+  position: absolute;
+  inset: 6px 50px;
+  background: #fdd206;
+  border-radius: 5px;
+}
+
+.vehicle-top::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -20px;
+  width: 40px;
+  height: 5px;
+  background: #fdd206;
+  transform-origin: right;
+  transform: rotate(15deg);
+  box-shadow: 100px 34px #fdd206;
+}
+
+.vehicle-top::before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: -20px;
+  width: 40px;
+  height: 5px;
+  background: #fdd206;
+  transform-origin: right;
+  transform: rotate(-15deg);
+  box-shadow: 100px -34px #fdd206;
 }
