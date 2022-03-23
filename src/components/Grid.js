@@ -34,18 +34,31 @@ function Grid() {
     }
 
     const handleDrop = (newRow, newCol) => {
-        setGridOverview(prevGrid => {
-            let newGrid = prevGrid.map(elem => elem);
-            if (selectedVehicle) {
-                const { row: prevRow, col: prevCol, carDirection } = selectedVehicle;
-                // remove vehicle from prev position
+        if (selectedVehicle) {
+            // Get selected vehicle info
+            const { row: prevRow, col: prevCol, carDirection } = selectedVehicle;
+
+            // Ensure horizontal vehicle only moves on it's x-axis
+            if (carDirection == horizontalCar && newRow != prevRow) {
+                return
+            }
+
+            // Ensure vertical vehicle only moves on it's y-axis
+            if (carDirection == verticalCar && newCol != prevCol) {
+                return
+            }
+
+            // Update vehicle position
+            setGridOverview(prevGrid => {
+                let newGrid = prevGrid.map(elem => elem);
+                // Remove vehicle from prev position
                 newGrid[prevRow][prevCol] = null;
 
-                // add vehicle to new position
+                // Add vehicle to new position
                 newGrid[newRow][newCol] = carDirection;
-            }
-            return newGrid;
-        })
+                return newGrid;
+            })
+        }
     }
 
     return (
