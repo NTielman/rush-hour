@@ -49,7 +49,7 @@ li[class^="col"] {
   position: relative;
 }
 
-li[class^="col"].hovered {
+li[class^="col"]:hover {
   background: rgba(245, 245, 245, 0.25);
 }
 

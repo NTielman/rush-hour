@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 
-function Vehicle({ orientation = "horizontal" }) {
+function Vehicle({ orientation = "horizontal", row, col, setSelectedVehicle }) {
 
     const [invisibility, setInvisibility] = useState(false)
 
-    // Make vehicle invisble on drag
     const handleDragStart = () => {
+        setSelectedVehicle({
+            row,
+            col,
+            carDirection: orientation
+        })
+        // Make vehicle invisble on drag
         setTimeout(() => setInvisibility(true));
     }
 
