@@ -159,3 +159,15 @@ li[class^="col"]:hover {
 .hide {
   display: none;
 }
+
+/* Reset button */
+.reset-btn {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: #f4b603;
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: large;
+  cursor: pointer;
+}

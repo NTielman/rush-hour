@@ -15,8 +15,13 @@ function Grid() {
         [null, verticalCar, null]
     ]
 
-    useEffect(() => {
+    // Resets the grid to it's startposition
+    const resetGrid = () => {
         setGridOverview(startGrid);
+    }
+
+    useEffect(() => {
+        resetGrid()
     }, []);
 
     // Drag listeners
@@ -70,6 +75,7 @@ function Grid() {
                     )
                 })}
             </ul>
+            <button className="reset-btn" onClick={resetGrid}>Reset</button>
         </section>
     )
 }
