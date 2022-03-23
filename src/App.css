@@ -27,6 +27,10 @@ ul.grid {
   overflow: hidden;
 }
 
+ul.sub-list {
+  display: contents;
+}
+
 li[class^="row"] {
   display: flex;
   justify-content: space-evenly;
@@ -45,7 +49,7 @@ li[class^="col"] {
   position: relative;
 }
 
-li[class^="col"]:hover {
+li[class^="col"].hovered {
   background: rgba(245, 245, 245, 0.25);
 }
 
@@ -57,6 +61,7 @@ li[class^="col"]:hover {
   background: #f4b603;
   border-radius: 10px;
   box-shadow: -10px 10px rgba(0, 0, 0, 0.25);
+  cursor: grab;
 }
 
 .vehicle.vertical {
@@ -149,4 +154,8 @@ li[class^="col"]:hover {
   transform-origin: right;
   transform: rotate(-15deg);
   box-shadow: 100px -34px #fdd206;
+}
+
+.hide {
+  display: none;
 }
