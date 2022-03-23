@@ -7,7 +7,4 @@ Create a gameboard modal/ popup (modify message of popup through props)
 Add logic to determine when a game is over (*Show popup when game is won)
 Add a reset button ✅
 Handle reset button click, Add logic to move cars back to start position ✅
-Add differnt levels and startpositions to gameplay
-
-#ff4474
-#f40374
+Refactor code (add css variables, divide Grid into seperate smaller components: Gridcell, Grid and Gameplay)

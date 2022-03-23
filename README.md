@@ -21,4 +21,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
 ## Screenshots
-![alt text](https://github.com/NTielman/CSS_effects/blob/master/rush-hour-preview.png "Rush Hour Preview image")
+![alt text](https://github.com/NTielman/rush-hour/blob/main/rush-hour-preview.png "Rush Hour Preview image")
