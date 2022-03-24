@@ -1,3 +1,13 @@
+:root {
+  --road-color: #333;
+  --main-vehicle-color: #fdd206;
+  --accent-vehicle-color: #f4b603;
+  --back-light-color: #fc3c25;
+  --vehicle-window-color: #111;
+  --white: #fff;
+  --default-border-radius: 10px;
+}
+
 body {
   background: #ededed;
   min-height: 100vh;
@@ -30,7 +40,7 @@ ul.grid {
   display: flex;
   flex-direction: column;
   list-style: none;
-  background: #333;
+  background: var(--road-color);
   border-radius: 20px;
   justify-content: space-evenly;
   overflow: hidden;
@@ -48,7 +58,7 @@ li[class^="row"] {
 }
 
 li[class^="col"] {
-  border: 1px solid white;
+  border: 1px solid var(--white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,8 +77,8 @@ li[class^="col"]:hover {
   position: absolute;
   width: 200px;
   height: 80px;
-  background: #f4b603;
-  border-radius: 10px;
+  background: var(--accent-vehicle-color);
+  border-radius: var(--default-border-radius);
   box-shadow: -10px 10px rgba(0, 0, 0, 0.25);
   cursor: grab;
 }
@@ -85,11 +95,11 @@ li[class^="col"]:hover {
   left: 2px;
   width: 5px;
   height: 15px;
-  background: #fc3c25;
+  background: var(--back-light-color);
   border-radius: 2px;
 
   /* Second light */
-  box-shadow: 0 42px #fc3c25;
+  box-shadow: 0 42px var(--back-light-color);
 }
 
 /* Front lights */
@@ -100,19 +110,19 @@ li[class^="col"]:hover {
   right: 2px;
   width: 6px;
   height: 16px;
-  background: #fff;
+  background: var(--white);
   border-radius: 2px;
 
   /* Second light */
-  box-shadow: 0 44px #fff;
+  box-shadow: 0 44px var(--white);
 }
 
 /* Vehicle body */
 .vehicle-body {
   position: absolute;
   inset: 5px 10px;
-  background: #fdd206;
-  border-radius: 10px;
+  background: var(--main-vehicle-color);
+  border-radius: var(--default-border-radius);
   overflow: hidden;
 }
 
@@ -120,22 +130,22 @@ li[class^="col"]:hover {
   content: "";
   position: absolute;
   inset: 0 30px;
-  background: #111;
-  border-radius: 10px;
+  background: var(--vehicle-window-color);
+  border-radius: var(--default-border-radius);
 }
 
 .vehicle-body::after {
   content: "";
   position: absolute;
   inset: 0px 87px;
-  background: #fdd206;
+  background: var(--main-vehicle-color);
 }
 
 /* Vehicle top */
 .vehicle-top {
   position: absolute;
   inset: 6px 50px;
-  background: #fdd206;
+  background: var(--main-vehicle-color);
   border-radius: 5px;
 }
 
@@ -146,10 +156,10 @@ li[class^="col"]:hover {
   left: -20px;
   width: 40px;
   height: 5px;
-  background: #fdd206;
+  background: var(--main-vehicle-color);
   transform-origin: right;
   transform: rotate(15deg);
-  box-shadow: 100px 34px #fdd206;
+  box-shadow: 100px 34px var(--main-vehicle-color);
 }
 
 .vehicle-top::before {
@@ -159,10 +169,10 @@ li[class^="col"]:hover {
   left: -20px;
   width: 40px;
   height: 5px;
-  background: #fdd206;
+  background: var(--main-vehicle-color);
   transform-origin: right;
   transform: rotate(-15deg);
-  box-shadow: 100px -34px #fdd206;
+  box-shadow: 100px -34px var(--main-vehicle-color);
 }
 
 .hide {
@@ -173,9 +183,9 @@ li[class^="col"]:hover {
 .reset-btn {
   margin: 1rem;
   padding: 0.5rem 1rem;
-  background: #f4b603;
+  background: var(--accent-vehicle-color);
   border: none;
-  border-radius: 10px;
+  border-radius: var(--default-border-radius);
   font-weight: 800;
   font-size: large;
   cursor: pointer;
@@ -195,8 +205,8 @@ li[class^="col"]:hover {
 }
 
 .modal {
-  background: #fff;
-  border-radius: 10px;
+  background: var(--white);
+  border-radius: var(--default-border-radius);
   padding: 1rem;
   min-width: 500px;
   min-height: 400px;
