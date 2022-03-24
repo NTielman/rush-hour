@@ -1,12 +1,21 @@
 body {
   background: #ededed;
   min-height: 100vh;
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow: hidden;
 }
 
 .App {
   display: grid;
   place-content: center;
-  margin: 3rem;
+}
+
+/* Title styling */
+.game-title {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 1.25rem;
 }
 
 .play-area {
@@ -170,4 +179,37 @@ li[class^="col"]:hover {
   font-weight: 800;
   font-size: large;
   cursor: pointer;
+}
+
+/* Modal */
+.backdrop {
+  position: absolute;
+  background: rgba(17, 17, 17, 0.5);
+  width: 100%;
+  height: 100%;
+}
+
+.backdrop.active {
+  display: grid;
+  place-content: center;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  min-width: 500px;
+  min-height: 400px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.modal-title {
+  text-transform: uppercase;
+}
+
+.modal-description {
+  margin: 2rem;
+  font-weight: 600;
 }

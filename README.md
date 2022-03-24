@@ -22,3 +22,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Screenshots
 ![alt text](https://github.com/NTielman/rush-hour/blob/main/rush-hour-preview.png "Rush Hour Preview image")
+
+
+## Live Preview
+https://rad-youtiao-a418d3.netlify.app/
