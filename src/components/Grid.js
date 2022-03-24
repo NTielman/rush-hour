@@ -38,14 +38,46 @@ function Grid() {
             // Get selected vehicle info
             const { row: prevRow, col: prevCol, carDirection } = selectedVehicle;
 
-            // Ensure horizontal vehicle only moves on it's x-axis
-            if (carDirection == horizontalCar && newRow != prevRow) {
-                return
+            if (carDirection === horizontalCar) {
+                // Ensure vehicle only moves on it's x-axis
+                if (newRow !== prevRow) return;
+
+                // Ensure vehicle has moved
+                if (newCol === prevCol) return;
+
+                // Ensure there are no vehicles between start position and end
+                if (newCol > prevCol) { // Vehicle moved forward
+                    for (let i = prevCol + 1; i <= newCol; i++) {
+                        const cellHasVehicle = gridOverview[newRow][i];
+                        if (cellHasVehicle) return;
+                    }
+                } else { // Vehicle moved backward
+                    for (let i = prevCol - 1; i >= newCol; i--) {
+                        const cellHasVehicle = gridOverview[newRow][i];
+                        if (cellHasVehicle) return;
+                    }
+                }
             }
 
-            // Ensure vertical vehicle only moves on it's y-axis
-            if (carDirection == verticalCar && newCol != prevCol) {
-                return
+            if (carDirection === verticalCar) {
+                // Ensure vehicle only moves on it's y-axis
+                if (newCol !== prevCol) return;
+
+                // Ensure vehicle has moved
+                if (newRow === prevRow) return;
+
+                // Ensure there are no vehicles between start position and end
+                if (newRow > prevRow) { // Vehicle moved downward
+                    for (let i = prevRow + 1; i <= newRow; i++) {
+                        const cellHasVehicle = gridOverview[i][newCol];
+                        if (cellHasVehicle) return;
+                    }
+                } else { // Vehicle moved upward
+                    for (let i = prevRow - 1; i >= newRow; i--) {
+                        const cellHasVehicle = gridOverview[i][newCol];
+                        if (cellHasVehicle) return;
+                    }
+                }
             }
 
             // Update vehicle position

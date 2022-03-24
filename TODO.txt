@@ -1,8 +1,8 @@
 Create a simple 3x3 grid ✅
 Create a car componenent (modify color and size through props?) ✅
 Make car draggable (*google drag 'n drop functionality) ✅
-Add directional constraint to car (Ensure car can only move on one axis)
-Add logic to ensure cars can only move to an empty grid area
+Add directional constraint to car (Ensure car can only move on one axis) ✅
+Add logic to ensure cars can only move to an empty grid area ✅
 Create a gameboard modal/ popup (modify message of popup through props)
 Add logic to determine when a game is over (*Show popup when game is won)
 Add a reset button ✅
